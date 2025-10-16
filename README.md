@@ -21,26 +21,37 @@ All 3 datasets (motor cortex, somatosensory cortex, and hippocampus) used in the
 ## Installation
 
 This package can be installed via `pip` at the command line by typing
-```buildoutcfg
-pip install Neural-Decoding
-```
-or manually via
-```buildoutcfg
-git clone https://github.com/KordingLab/Neural_Decoding.git
-cd Neural_Decoding
-python setup.py install
-```
-You'll have to install each dependency yourself if you install manually. We've designed the code so that not all machine learning packages
-need to be installed for the others to work.
 
-## Dependencies
-All packages will be installed automatically when installing from `pip` (because of the `requirements.txt` file).
+```buildoutcfg
+pip install 'Neural_Decoding @ git+https://github.com/theowoo/Neural_Decoding.git'
+```
 
-If installing manually via `python setup.py install`:
-In order to run all the decoders based on neural networks, you need to install [Keras](https://keras.io/#installation) <br>
-In order to run the XGBoost Decoder, you need to install [XGBoost](https://pypi.python.org/pypi/xgboost/) <br>
-In order to run the Wiener Filter, Wiener Cascade, or Support Vector Regression you will need [scikit-learn](http://scikit-learn.org/stable/install.html). <br>
-In order to do hyperparameter optimization, you need to install [BayesianOptimization](https://github.com/fmfn/BayesianOptimization)
+or via SSH
+
+```buildoutcfg
+pip install 'Neural_Decoding @ git+git@github.com:theowoo/Neural_Decoding.git'
+```
+
+We've designed the code so that not all machine learning packages need to be installed for the others to work.
+
+### Optional dependencies
+
+Specific dependencies may be specified. `[full]` will install all dependencies:
+
+```buildoutcfg
+pip install 'Neural_Decoding[full] @ git+https://github.com/theowoo/Neural_Decoding.git'
+```
+
+Or combined:
+
+```buildoutcfg
+pip install 'Neural_Decoding[nn,xgboost] @ git+https://github.com/theowoo/Neural_Decoding.git'
+```
+
+In order to run all the decoders based on neural networks, use `[nn]`. <br>
+In order to run the XGBoost Decoder, use `[xgboost]` <br>
+In order to run the Wiener Filter, Wiener Cascade, or Support Vector Regression, use `[sklearn]`. <br>
+In order to do hyperparameter optimization, use `[hyperopt]`.
 
 ## Getting started
 We have included jupyter notebooks that provide detailed examples of how to use the decoders.
