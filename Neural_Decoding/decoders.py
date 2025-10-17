@@ -827,13 +827,12 @@ class XGBoostRegression(object):
 
         # Set parameters for XGBoost
         param = {
-            "objective": "reg:linear",  # for linear output
+            "objective": "reg:squarederror",  # for linear output
             "eval_metric": "logloss",  # loglikelihood loss
             "max_depth": self.max_depth,  # this is the only parameter we have set,
             # it's one of the way or regularizing
             "eta": self.eta,
             "seed": 2925,  # for reproducibility
-            "silent": 1,
         }
         if self.gpu < 0:
             param["nthread"] = -1  # with -1 it will use all available threads
