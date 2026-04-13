@@ -35,7 +35,7 @@ full = [
 ]
 test = [
     "requests",
-    "rich_click >= 1.9.4",
+    "rich_click >= 1.9.7",
     "tqdm >= 4.67.1",
     "pytest >= 8.4.2"
 ]
